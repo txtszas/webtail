@@ -7,8 +7,12 @@
     <script src="/socket.io/socket.io.js"></script>
 </head>
 <body>
-    <button class="clear">clear</button>
+    <label for="query">query</label>
+    <input type="text" class="query">
 
+    <button class="start">start</button>
+    <button class="clear">clear</button>
+    <button class="stop">stop</button>    
     <div class="content">
         
     </div>
@@ -24,6 +28,13 @@
 
     $('.clear').on('click', function(){
         $('.content').empty();
+    })
+
+    $('.start').on('click', function(){
+         socket.emit('start',{'q' : $('.query').val() });
+    })
+     $('.stop').on('click', function(){
+         socket.emit('stop',{'q' : 3 });
     })
     function send(){
         socket.emit('msg','aa');
