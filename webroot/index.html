@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <button class="clear">clear</button>
+
+    <div class="content">
+        
+    </div>
+    <script type="text/javascript">
+    var socket = new io.connect();
+    socket.on('test',function(){
+        console.log('content');
+    })
+    socket.on('line',function(msg){
+        console.log(msg);
+        $('.content').prepend('<p>' + msg +  '</p>')
+    })
+
+    $('.clear').on('click', function(){
+        $('.content').empty();
+    })
+    function send(){
+        socket.emit('msg','aa');
+    }
+    </script>
+</body>
+</html>

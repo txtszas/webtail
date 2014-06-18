@@ -1,0 +1,20 @@
+{
+  "name": "esaytail",
+  "version": "0.0.1",
+  "description": "brower see the log tail",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/txtszas/webtail.git"
+  },
+  "keywords": [
+    "tail"
+  ],
+  "author": "taoxutian",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "8dc4df387894abb4f34d4ee970ef57ef957d081d"
+}
